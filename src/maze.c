@@ -9,8 +9,6 @@
  * Return: EXIT_SUCCESS upon graceful end of execution. EXIT_FAILURE upon
  * failure to: create a SDL window or renderer, initialize map layout.
  */
-
-
 int main(void)
 {
 	SDL_Instance instance;
@@ -37,6 +35,10 @@ int main(void)
 		SDL_RenderPresent(instance.renderer);
 
 		update_player(maze, &keys, &status);
-
 	}
-	
+	map_free(&maze);
+	SDL_DestroyRenderer(instance.renderer);
+	SDL_DestroyWindow(instance.window);
+	SDL_Quit();
+	return (EXIT_SUCCESS);
+}
