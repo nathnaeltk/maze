@@ -9,6 +9,8 @@
  * Return: EXIT_SUCCESS upon graceful end of execution. EXIT_FAILURE upon
  * failure to: create a SDL window or renderer, initialize map layout.
  */
+
+
 int main(void)
 {
 	SDL_Instance instance;
